@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mstreddyaksvotingapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mstreddyaksvotingapp
+  template:
+    metadata:
+      labels:
+        app: mstreddyaksvotingapp 
+    spec:
+      containers:
+        - name: mstreddyaksvotingapp 
+          image: swetharegistry.azurecr.io/mstreddyaksvotingapp
+          ports:
+          - containerPort: 8080
